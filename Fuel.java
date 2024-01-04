@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Fuel implements Participant {
+public class Fuel implements Participant, Cloneable {
     private boolean capacity;
 
     public Fuel() {
@@ -53,5 +53,9 @@ public class Fuel implements Participant {
 
     public void empty() {
         this.capacity = false;
+    }
+
+    public Fuel clone() throws CloneNotSupportedException {
+        return (Fuel) super.clone();
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Car extends Engine implements Participant {
+public class Car extends Engine implements Participant, Cloneable {
 
     private static int numberOfCars = 0;
 
@@ -95,5 +95,12 @@ public class Car extends Engine implements Participant {
             }
             return buffer;
         }
+    }
+
+    @Override
+    public Car clone() throws CloneNotSupportedException {
+        Car newCar = (Car) super.clone();
+        newCar.fuel = (Fuel) fuel.clone();
+        return newCar;
     }
 }
