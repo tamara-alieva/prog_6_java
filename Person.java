@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Person {
-    private String name;
-    private int balance;
+    protected String name;
+    protected int balance;
 
     public Person() {
         this.name = "";
@@ -29,6 +29,11 @@ public class Person {
     }
 
     public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public void setInfo(String name, int balance) {
+        this.name = name;
         this.balance = balance;
     }
 

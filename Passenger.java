@@ -28,6 +28,11 @@ public class Passenger extends Person {
         this.payment_method = method;
     }
 
+    public void setInfo(String name, int balance, boolean method) {
+        setInfo(name, balance);
+        this.payment_method = method;
+    }
+
     public boolean getMethod() {
         return this.payment_method;
     }
@@ -57,10 +62,10 @@ public class Passenger extends Person {
         }
         else {
             System.out.println("Данные о пассажире:");
-            System.out.println("-Имя: " + this.getName());
-            System.out.println("-Баланс: " + this.getBalance());
+            System.out.println("-Имя: " + this.name);
+            System.out.println("-Баланс: " + this.balance);
             System.out.print("-Способ оплаты: ");
-            if (this.getMethod()) {
+            if (this.payment_method) {
                 System.out.println("Банковская карта\n");
             } else {
                 System.out.println("Наличные\n");

@@ -36,6 +36,13 @@ public class Driver extends Person {
         this.orderAmount = orderAmount;
     }
 
+    public void setInfo(String name, int balance, int experience, int orderAmount) {
+        this.name = name;
+        this.balance = balance;
+        this.experience = experience;
+        this.orderAmount = orderAmount;
+    }
+
     public int getExperience() {
         return this.experience;
     }
@@ -48,7 +55,7 @@ public class Driver extends Person {
     public void input() {
         Scanner scanner = new Scanner(System.in);
         String temp = ""; int flag;
-        System.out.println("** Ввод данных водителя: " + this.getName() + " **");
+        System.out.println("** Ввод данных водителя: " + this.name + " **");
         do {
             System.out.print("Введите количество лет опыта: ");
             temp = scanner.nextLine();
@@ -69,15 +76,15 @@ public class Driver extends Person {
 
     @Override
     public void output() {
-        if (this.getName().equals("")) {
+        if (this.name.equals("")) {
             throw new IllegalArgumentException("Отсутствует имя Водителя!");
         }
         else {
             System.out.println("Данные о водителе:");
-            System.out.println("-Имя: " + this.getName());
-            System.out.println("-Баланс: " + this.getBalance());
-            System.out.println("-Количество лет опыта: " + this.getExperience());
-            System.out.println("-Количество выполненных заказов: " + this.getOrderAmount() + "\n");
+            System.out.println("-Имя: " + this.name);
+            System.out.println("-Баланс: " + this.balance);
+            System.out.println("-Количество лет опыта: " + this.experience);
+            System.out.println("-Количество выполненных заказов: " + this.orderAmount + "\n");
         }
     }
 
