@@ -38,9 +38,9 @@ public class Order {
             System.out.println("Класс поездки: " + (rate ? "Комфорт" : "Эконом"));
             System.out.println("Загруженность дорог: " + (congestion ? "Есть" : "Нет"));
             System.out.println("Стоимость поездки: " + payment + "\n");
-            passenger.output();
-            driver.output();
-            car.output();
+            System.out.println(passenger);
+            System.out.println(driver);
+            System.out.println(car);
         }
     }
 

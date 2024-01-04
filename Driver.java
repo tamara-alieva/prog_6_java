@@ -75,16 +75,12 @@ public class Driver extends Person {
     }
 
     @Override
-    public void output() {
+    public String toString() {
         if (this.name.equals("")) {
             throw new IllegalArgumentException("Отсутствует имя Водителя!");
         }
         else {
-            System.out.println("Данные о водителе:");
-            System.out.println("-Имя: " + this.name);
-            System.out.println("-Баланс: " + this.balance);
-            System.out.println("-Количество лет опыта: " + this.experience);
-            System.out.println("-Количество выполненных заказов: " + this.orderAmount + "\n");
+            return "Данные о водителе:\n-Имя: " + this.name + "\n-Баланс: " + this.balance + "\n-Количество лет опыта: " + this.experience + "\n-Количество выполненных заказов: " + this.orderAmount + '\n';
         }
     }
 

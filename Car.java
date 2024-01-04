@@ -79,19 +79,19 @@ public class Car {
         System.out.println("Данные успешно введены!\n");
     }
 
-    public void output() {
+    @Override
+    public String toString() {
         if (this.brand.equals("")) {
             throw new IllegalArgumentException("Отсутствует марка Автомобиля!");
         }
         else {
-            System.out.println("Данные об автомобиле:");
-            System.out.println("-Марка: " + this.brand);
-            System.out.print("-Класс: ");
+            String buffer = "Данные об автомобиле:\n-Марка: " + this.brand + "\n-Класс: ";
             if (this.rate) {
-                System.out.println("Комфорт");
+                buffer += "Комфорт\n";
             } else {
-                System.out.println("Эконом");
+                buffer += "Эконом\n";
             }
+            return buffer;
         }
     }
 }

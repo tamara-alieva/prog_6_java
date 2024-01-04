@@ -35,14 +35,15 @@ public class Fuel {
             this.capacity = false;
     }
 
-    public void output() {
-        System.out.println("Данные о топливном баке:");
-        System.out.print("-Заполненность: ");
+    @Override
+    public String toString() {
+        String buffer = "Данные о топливном баке:\n-Заполненность: ";
         if (this.getCapacity()) {
-            System.out.println("Полный\n");
+            buffer += "Полный\n";
         } else {
-            System.out.println("Пустой\n");
+            buffer +="Пустой\n";
         }
+        return buffer;
     }
 
     public void fill() {
