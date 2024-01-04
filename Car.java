@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Car extends Engine implements Participant, Cloneable {
+public class Car<T> extends Engine implements Participant, Cloneable {
 
     private static int numberOfCars = 0;
 
+    private T id;
     private String brand;
     private boolean rate;
     protected Fuel fuel;
@@ -36,12 +37,24 @@ public class Car extends Engine implements Participant, Cloneable {
         numberOfCars++;
     }
 
+    public Car(T id, String brand, boolean rate) {
+        this.fuel = new Fuel();
+        this.id = id;
+        this.brand = brand;
+        this.rate = rate;
+        numberOfCars++;
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
     public void setRate(boolean rate) {
         this.rate = rate;
+    }
+
+    public void setID(T id) {
+        this.id = id;
     }
 
     @Override
@@ -51,6 +64,10 @@ public class Car extends Engine implements Participant, Cloneable {
 
     public boolean getRate() {
         return this.rate;
+    }
+
+    public T getID() {
+        return this.id;
     }
 
     public static int getNumberOfCars() {
@@ -87,7 +104,7 @@ public class Car extends Engine implements Participant, Cloneable {
             throw new IllegalArgumentException("Отсутствует марка Автомобиля!");
         }
         else {
-            String buffer = "Данные об автомобиле:\n-Марка: " + this.brand + "\n-Класс: ";
+            String buffer = "Данные об автомобиле:\n-ID: " + this.id + "\n-Марка: " + this.brand + "\n-Класс: ";
             if (this.rate) {
                 buffer += "Комфорт\n";
             } else {
@@ -98,8 +115,8 @@ public class Car extends Engine implements Participant, Cloneable {
     }
 
     @Override
-    public Car clone() throws CloneNotSupportedException {
-        Car newCar = (Car) super.clone();
+    public Car<T> clone() throws CloneNotSupportedException {
+        Car<T> newCar = (Car<T>) super.clone();
         newCar.fuel = (Fuel) fuel.clone();
         return newCar;
     }
