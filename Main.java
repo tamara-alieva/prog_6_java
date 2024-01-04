@@ -7,17 +7,20 @@ public class Main {
         System.out.println("1) Перегруженный метод setInfo(...) в классе Passenger (с вызовом метода класса Person)");
         Passenger passenger1 = new Passenger();
         passenger1.setInfo("Иван", 5000, false);
-        passenger1.output();
+        System.out.println(passenger1);
 
-        //System.out.println();
         System.out.println("2) Перегруженный метод setInfo(...) в классе Driver (без вызова метода класса Person)");
         Driver driver1 = new Driver();
         driver1.setInfo("Леонид", 8700, 14, 390);
-        driver1.output();
+        System.out.println(driver1);
 
         System.out.println("3) Вызов конструктора базового класса из конструктора производного класса");
         Passenger passenger2 = new Passenger("Георгий", 5000, true);
-        passenger2.output();
+        System.out.println(passenger2);
+
+        System.out.println("4) Абстрактный класс Engine -> класс Car");
+        Car car1 = new Car("Volvo", true);
+        System.out.println("getBrand(): " + car1.getBrand());
         
     }
 }
