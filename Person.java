@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Person {
+public class Person implements Participant {
     protected String name;
     protected int balance;
 
@@ -45,6 +45,7 @@ public class Person {
         return this.balance;
     }
 
+    @Override
     public void input() {
         Scanner scanner = new Scanner(System.in);
         String temp; boolean flag; int f;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Fuel {
+public class Fuel implements Participant {
     private boolean capacity;
 
     public Fuel() {
@@ -19,6 +19,7 @@ public class Fuel {
         return this.capacity;
     }
 
+    @Override
     public void input() {
         Scanner scanner = new Scanner(System.in);
         String temp; boolean flag;

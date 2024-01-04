@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Car extends Engine {
+public class Car extends Engine implements Participant {
 
     private static int numberOfCars = 0;
 
@@ -57,6 +57,7 @@ public class Car extends Engine {
         return numberOfCars;
     }
 
+    @Override
     public void input() {
         Scanner scanner = new Scanner(System.in);
         String temp; boolean flag;
