@@ -21,6 +21,10 @@ public class Main {
         System.out.println("4) Абстрактный класс Engine -> класс Car");
         Car car1 = new Car("Volvo", true);
         System.out.println("getBrand(): " + car1.getBrand());
+
+        System.out.println("\n5) Интерфейс Participant и его метод input()");
+        Fuel fuel = new Fuel();
+        fuel.input();
         
     }
 }
