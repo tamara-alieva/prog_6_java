@@ -29,8 +29,8 @@ public class Main {
         /*
         System.out.println("\n6) Мелкое клонирование");
         try {
-            Car car_original1 = new Car("Toyota", false);
-            Car car_copy1 = car_original1.clone();
+            Car<Integer> car_original1 = new Car(12345, "Toyota", false);
+            Car<Integer> car_copy1 = car_original1.clone();
             car_copy1.fuel.fill();
             System.out.println("Оригинальный объект:");
             System.out.println(car_original1);
@@ -46,8 +46,8 @@ public class Main {
 
         System.out.println("\n7) Глубокое клонирование");
         try {
-            Car car_original2 = new Car("Toyota", false);
-            Car car_copy2 = car_original2.clone();
+            Car<Integer> car_original2 = new Car(12345, "Toyota", false);
+            Car<Integer> car_copy2 = car_original2.clone();
             car_copy2.fuel.fill();
             System.out.println("Оригинальный объект:");
             System.out.println(car_original2);
@@ -60,5 +60,8 @@ public class Main {
             System.out.println("Не применён интерфейс Cloneable!");
         }
         
+        System.out.println("\n8) Шаблон класса Car");
+        Car<Integer> car2 = new Car(12345, "Volkswagen", true);
+        System.out.println(car2);
     }
 }
