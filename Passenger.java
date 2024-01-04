@@ -57,7 +57,7 @@ public class Passenger extends Person {
 
     @Override
     public void output() {
-        if (this.getName().equals("")) {
+        if (this.name.equals("")) {
             throw new IllegalArgumentException("Отсутствует имя Пассажира!");
         }
         else {
@@ -70,6 +70,22 @@ public class Passenger extends Person {
             } else {
                 System.out.println("Наличные\n");
             }
+        }
+    }
+
+    @Override
+    public String toString() {
+        if (this.name.equals("")) {
+            throw new IllegalArgumentException("Отсутствует имя Пассажира!");
+        }
+        else {
+            String buffer = "Данные о пассажире:\n-Имя: " + this.name + "\n-Баланс: " + this.balance + "\n-Способ оплаты: ";
+            if (this.payment_method) {
+                buffer += "Банковская карта\n";
+            } else {
+                buffer += "Наличные\n";
+            }
+            return buffer;
         }
     }
 

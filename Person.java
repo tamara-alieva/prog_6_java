@@ -75,4 +75,13 @@ public class Person {
             System.out.println("-Баланс: " + this.balance);
         }
     }
+
+    @Override
+    public String toString() {
+        if (this.name.equals("")) {
+            throw new IllegalArgumentException("Отсутствует имя Человека!");
+        } else {
+            return "Данные о человеке:\n-Имя: " + this.name + "\n-Баланс: " + this.balance + '\n';
+        }
+    }
 }
