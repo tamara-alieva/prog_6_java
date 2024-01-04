@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Car {
+public class Car extends Engine {
 
     private static int numberOfCars = 0;
 
@@ -44,6 +44,7 @@ public class Car {
         this.rate = rate;
     }
 
+    @Override
     public String getBrand() {
         return this.brand;
     }
