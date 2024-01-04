@@ -23,8 +23,42 @@ public class Main {
         System.out.println("getBrand(): " + car1.getBrand());
 
         System.out.println("\n5) Интерфейс Participant и его метод input()");
-        Fuel fuel = new Fuel();
-        fuel.input();
+        Fuel fuel1 = new Fuel();
+        fuel1.input();
+
+        /*
+        System.out.println("\n6) Мелкое клонирование");
+        try {
+            Car car_original1 = new Car("Toyota", false);
+            Car car_copy1 = car_original1.clone();
+            car_copy1.fuel.fill();
+            System.out.println("Оригинальный объект:");
+            System.out.println(car_original1);
+            System.out.println(car_original1.fuel);
+            System.out.println("\nОбъект-клон:");
+            System.out.println(car_copy1);
+            System.out.println(car_copy1.fuel);
+        }
+        catch (CloneNotSupportedException e) {
+            System.out.println("Не применён интерфейс Cloneable!");
+        }
+        */
+
+        System.out.println("\n7) Глубокое клонирование");
+        try {
+            Car car_original2 = new Car("Toyota", false);
+            Car car_copy2 = car_original2.clone();
+            car_copy2.fuel.fill();
+            System.out.println("Оригинальный объект:");
+            System.out.println(car_original2);
+            System.out.println(car_original2.fuel);
+            System.out.println("\nОбъект-клон:");
+            System.out.println(car_copy2);
+            System.out.println(car_copy2.fuel);
+        }
+        catch (CloneNotSupportedException e) {
+            System.out.println("Не применён интерфейс Cloneable!");
+        }
         
     }
 }
